@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Make it compatible to mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Heart Disease Percent</title>
+
+</head>
+<body>
+
+
+    <form action="{{ url_for('predict')}}" method="post">
+    <p>What is your gender?</p>
+    <label><input type="radio" name="Sex" value="1" required="required"/>Male</label>
+        <label><input type="radio" name="Sex" value="0" required="required"/>Female</label><br>
+    
+    <p>What is your age?</p>
+    <input type="number" name="Age" placeholder="Enter your age" required="required" /><br>
+
+    <p>Do you have any of the following symptoms?</p>
+
+    <d>Smoking</d><br>
+    <label><input type="radio" name="s1" value="2" required="required"/>Yes</label>
+        <label><input type="radio" name="s1" value="1" required="required"/>No</label><br>
+    <d>Yellow_fingers</d><br>
+    <label><input type="radio" name="s2" value="2" required="required"/>Yes</label>
+        <label><input type="radio" name="s2" value="1" required="required"/>No</label><br>
+    <d>Anxiety</d><br>
+    <label><input type="radio" name="s3" value="2" required="required"/>Yes</label>
+        <label><input type="radio" name="s3" value="1" required="required"/>No</label><br>
+    <d>Peer_pressure</d><br>
+    <label><input type="radio" name="s4" value="2" required="required"/>Yes</label>
+        <label><input type="radio" name="s4" value="1" required="required"/>No</label><br>
+    <d>Chronic_disease</d><br>
+    <label><input type="radio" name="s5" value="2" required="required"/>Yes</label>
+        <label><input type="radio" name="s5" value="1" required="required"/>No</label><br>
+    <d>Fatigue</d><br>
+    <label><input type="radio" name="s6" value="2" required="required"/>Yes</label>
+        <label><input type="radio" name="s6" value="1" required="required"/>No</label><br>
+    <d>Allergy</d><br>
+    <label><input type="radio" name="s7" value="2" required="required"/>Yes</label>
+        <label><input type="radio" name="s7" value="1" required="required"/>No</label><br>
+    <d>Wheezing</d><br>
+    <label><input type="radio" name="s8" value="2" required="required"/>Yes</label>
+        <label><input type="radio" name="s8" value="1" required="required"/>No</label><br>
+    <d>Alcohol_consuming</d><br>
+    <label><input type="radio" name="s9" value="2" required="required"/>Yes</label>
+        <label><input type="radio" name="s9" value="1" required="required"/>No</label><br>
+    <d>Coughing</d><br>
+    <label><input type="radio" name="s10" value="2" required="required"/>Yes</label>
+        <label><input type="radio" name="s10" value="1" required="required"/>No</label><br>
+    <d>Shortness_of_breath</d><br>
+    <label><input type="radio" name="s11" value="2" required="required"/>Yes</label>
+        <label><input type="radio" name="s11" value="1" required="required"/>No</label><br>
+    <d>Swallowing_difficulty</d><br>
+    <label><input type="radio" name="s12" value="2" required="required"/>Yes</label>
+        <label><input type="radio" name="s12" value="1" required="required"/>No</label><br>
+    <d>Chest_pain</d><br>
+    <label><input type="radio" name="s13" value="2" required="required"/>Yes</label>
+        <label><input type="radio" name="s13" value="1" required="required"/>No</label><br>
+    
+    
+        <button type="submit">Do I Have Lung Cancer?</button><br><br>
+    
+    
+</form>
+<p>{% if prediction == 1 %}You Might Have Lung Cancer{% elif prediction == 0 %}You May Not Get Lung Cancer{% endif %}</p>
+
+
+</body>
+</html>
