@@ -1,3 +1,5 @@
+#credit : https://www.freecodecamp.org/news/machine-learning-web-app-with-flask/
+
 import numpy as np
 from flask import Flask, request, render_template
 import pickle
